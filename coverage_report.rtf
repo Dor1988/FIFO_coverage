@@ -1,0 +1,378 @@
+{\rtf1}
+[2024-04-01 12:48:03 UTC] vlib work && vlog '-timescale' '1ns/1ns' design.sv testbench.sv  && vsim -c -do run.do 
+VSIMSA: Configuration file changed: `/home/runner/library.cfg'
+ALIB: Library "work" attached.
+work = /home/runner/work/work.lib
+MESSAGE "Pass 1. Scanning modules hierarchy."
+MESSAGE "Pass 2. Processing instantiations."
+MESSAGE "Pass 3. Processing behavioral statements."
+MESSAGE "Running Optimizer."
+MESSAGE "ELB/DAG code generating."
+MESSAGE "Unit top modules: tb."
+MESSAGE "$root top modules: tb."
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time: 0[s]."
+ALOG: Warning: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+done
+# Aldec, Inc. Riviera-PRO version 2022.04.117.8517 built for Linux64 on May 04, 2022.
+# HDL, SystemC, and Assertions simulator, debugger, and design environment.
+# (c) 1999-2022 Aldec, Inc. All rights reserved.
+vsim +access+r;
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# KERNEL: PLI/VHPI kernel's engine initialization done.
+# PLI: Loading library '/usr/share/Riviera-PRO/bin/libsystf.so'
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ns.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.1 [s]
+# SLP: Finished : 0.1 [s]
+# SLP: 0 primitives and 5 (100.00%) other processes in SLP
+# SLP: 12 (5.83%) signals in SLP and 9 (4.37%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.1 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Riviera-PRO EDU Edition. The performance of simulation is reduced.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 5511 kB (elbread=459 elab2=4910 kernel=142 sdf=0)
+# KERNEL: ASDB file was created in location /home/runner/dataset.asdb
+run -all;
+# KERNEL: wr: 1, addr : 0, din : 179 full:0
+# KERNEL: wr: 1, addr : 1, din : 31 full:0
+# KERNEL: wr: 1, addr : 2, din : 192 full:0
+# KERNEL: wr: 1, addr : 3, din : 58 full:0
+# KERNEL: wr: 1, addr : 4, din : 240 full:0
+# KERNEL: wr: 1, addr : 5, din : 69 full:0
+# KERNEL: wr: 1, addr : 6, din : 126 full:0
+# KERNEL: wr: 1, addr : 7, din : 108 full:0
+# KERNEL: wr: 1, addr : 8, din : 61 full:0
+# KERNEL: wr: 1, addr : 9, din : 246 full:0
+# KERNEL: wr: 1, addr : 10, din : 12 full:0
+# KERNEL: wr: 1, addr : 11, din : 225 full:0
+# KERNEL: wr: 1, addr : 12, din : 31 full:0
+# KERNEL: wr: 1, addr : 13, din : 52 full:0
+# KERNEL: wr: 1, addr : 14, din : 170 full:0
+# KERNEL: wr: 1, addr : 15, din : 228 full:0
+# KERNEL: wr: 1, addr : 16, din : 169 full:1
+# KERNEL: wr: 1, addr : 17, din : 128 full:1
+# KERNEL: wr: 1, addr : 18, din : 219 full:1
+# KERNEL: wr: 1, addr : 19, din : 4 full:1
+# KERNEL: rd: 0, addr : 0, dout : 179 empty : 0
+# KERNEL: rd: 0, addr : 1, dout : 31 empty : 0
+# KERNEL: rd: 0, addr : 2, dout : 192 empty : 0
+# KERNEL: rd: 0, addr : 3, dout : 58 empty : 0
+# KERNEL: rd: 0, addr : 4, dout : 240 empty : 0
+# KERNEL: rd: 0, addr : 5, dout : 69 empty : 0
+# KERNEL: rd: 0, addr : 6, dout : 126 empty : 0
+# KERNEL: rd: 0, addr : 7, dout : 108 empty : 0
+# KERNEL: rd: 0, addr : 8, dout : 61 empty : 0
+# KERNEL: rd: 0, addr : 9, dout : 246 empty : 0
+# KERNEL: rd: 0, addr : 10, dout : 12 empty : 0
+# KERNEL: rd: 0, addr : 11, dout : 225 empty : 0
+# KERNEL: rd: 0, addr : 12, dout : 31 empty : 0
+# KERNEL: rd: 0, addr : 13, dout : 52 empty : 0
+# KERNEL: rd: 0, addr : 14, dout : 170 empty : 0
+# KERNEL: rd: 0, addr : 15, dout : 228 empty : 1
+# KERNEL: rd: 0, addr : 16, dout : 228 empty : 1
+# KERNEL: rd: 0, addr : 17, dout : 228 empty : 1
+# KERNEL: rd: 0, addr : 18, dout : 228 empty : 1
+# KERNEL: rd: 0, addr : 19, dout : 228 empty : 1
+# RUNTIME: Info: RUNTIME_0068 testbench.sv (161): $finish called.
+# KERNEL: Time: 1200 ns,  Iteration: 0,  Instance: /tb,  Process: @INITIAL#157_2@.
+# KERNEL: stopped at time: 1200 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+acdb save;
+acdb report -db  fcover.acdb -txt -o cov.txt -verbose  
+# ACDB: Coverage report "cov.txt" was generated successfully.
+exec cat cov.txt;
+# +++++++++++++++++++++++++++++++++++++++++++++
+# ++++++++++       REPORT INFO       ++++++++++
+# +++++++++++++++++++++++++++++++++++++++++++++
+# 
+# 
+# SUMMARY
+# ===============================================
+# |     Property     |          Value           |
+# ===============================================
+# | User             | runner                   |
+# | Host             | cd5ad37950df             |
+# | Tool             | Riviera-PRO 2022.04      |
+# | Report file      | /home/runner/cov.txt     |
+# | Report date      | 2024-04-01 08:48         |
+# | Report arguments | -verbose                 |
+# | Input file       | /home/runner/fcover.acdb |
+# | Input file date  | 2024-04-01 08:48         |
+# | Number of tests  | 1                        |
+# ===============================================
+# 
+# 
+# TEST DETAILS
+# ==============================================
+# | Property |              Value              |
+# ==============================================
+# | Test     | fcover.acdb:fcover              |
+# | Status   | Ok                              |
+# | Args     | asim +access+r                  |
+# | Simtime  | 1200 ns                         |
+# | Cputime  | 0.038 s                         |
+# | Seed     | 1                               |
+# | Date     | 2024-04-01 08:48                |
+# | User     | runner                          |
+# | Host     | cd5ad37950df                    |
+# | Host os  | Linux64                         |
+# | Tool     | Riviera-PRO 2022.04 (simulator) |
+# ==============================================
+# 
+# 
+# +++++++++++++++++++++++++++++++++++++++++++++
+# ++++++++++     DESIGN HIERARCHY    ++++++++++
+# +++++++++++++++++++++++++++++++++++++++++++++
+# 
+# 
+# CUMULATIVE SUMMARY
+# =============================================
+# |    Coverage Type    | Weight | Hits/Total |
+# =============================================
+# | Covergroup Coverage |      1 |   100.000% |
+# |---------------------|--------|------------|
+# | Types               |        |      1 / 1 |
+# =============================================
+# CUMULATIVE INSTANCE-BASED COVERAGE: 100.000%
+# COVERED INSTANCES: 1 / 1
+# FILES: 1
+# 
+# 
+# INSTANCE - /tb : work.tb
+# 
+# 
+#     SUMMARY
+#     ==========================================================================
+#     |    Coverage Type    | Weight | Local Hits/Total | Recursive Hits/Total |
+#     ==========================================================================
+#     | Covergroup Coverage |      1 |         100.000% |             100.000% |
+#     |---------------------|--------|------------------|----------------------|
+#     | Types               |        |            1 / 1 |                1 / 1 |
+#     ==========================================================================
+#     WEIGHTED AVERAGE LOCAL: 100.000%
+#     WEIGHTED AVERAGE RECURSIVE: 100.000%
+# 
+# 
+#     COVERGROUP COVERAGE
+#     =====================================================================
+#     |            Covergroup            |   Hits   |  Goal /  |  Status  |
+#     |                                  |          | At Least |          |
+#     =====================================================================
+#     | TYPE /tb/c                       | 100.000% | 100.000% | Covered  |
+#     =====================================================================
+#     | INSTANCE <UNNAMED1>              | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | COVERPOINT <UNNAMED1>::empty     | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin empty_l                      |       70 |        1 | Covered  |
+#     | bin empty_h                      |       50 |        1 | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | COVERPOINT <UNNAMED1>::full      | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin full_l                       |      110 |        1 | Covered  |
+#     | bin full_h                       |       10 |        1 | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | COVERPOINT <UNNAMED1>::rst       | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin rst_l                        |      115 |        1 | Covered  |
+#     | bin rst_h                        |        5 |        1 | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | COVERPOINT <UNNAMED1>::wr        | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin wr_l                         |      100 |        1 | Covered  |
+#     | bin wr_h                         |       20 |        1 | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | COVERPOINT <UNNAMED1>::rd        | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin rd_l                         |      100 |        1 | Covered  |
+#     | bin rd_h                         |       20 |        1 | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | COVERPOINT <UNNAMED1>::din       | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin lower                        |       96 |        1 | Covered  |
+#     | bin mid                          |        8 |        1 | Covered  |
+#     | bin high                         |       16 |        1 | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | COVERPOINT <UNNAMED1>::dout      | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin lower                        |       14 |        1 | Covered  |
+#     | bin mid                          |        4 |        1 | Covered  |
+#     | bin high                         |       56 |        1 | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | CROSS <UNNAMED1>::cross_rst_wr   | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin <rst_l,wr_h>                 |       20 |        1 | Covered  |
+#     | ignore bin unused_rst            |        5 |    -     | Occurred |
+#     | ignore bin unused_wr             |      100 |    -     | Occurred |
+#     |----------------------------------|----------|----------|----------|
+#     | CROSS <UNNAMED1>::cross_rst_rd   | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin <rst_l,rd_h>                 |       20 |        1 | Covered  |
+#     | ignore bin unused_rst            |        5 |    -     | Occurred |
+#     | ignore bin unused_rd             |      100 |    -     | Occurred |
+#     |----------------------------------|----------|----------|----------|
+#     | CROSS <UNNAMED1>::cross_Wr_din   | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin <rst_l,wr_h,lower>           |        8 |        1 | Covered  |
+#     | bin <rst_l,wr_h,mid>             |        4 |        1 | Covered  |
+#     | bin <rst_l,wr_h,high>            |        8 |        1 | Covered  |
+#     | ignore bin unused_rst            |        5 |    -     | Occurred |
+#     | ignore bin unused_wr             |      100 |    -     | Occurred |
+#     |----------------------------------|----------|----------|----------|
+#     | CROSS <UNNAMED1>::cross_rd_dout  | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin <rst_l,rd_h,lower>           |        7 |        1 | Covered  |
+#     | bin <rst_l,rd_h,mid>             |        2 |        1 | Covered  |
+#     | bin <rst_l,rd_h,high>            |       10 |        1 | Covered  |
+#     | ignore bin unused_rd             |       55 |    -     | Occurred |
+#     |----------------------------------|----------|----------|----------|
+#     | CROSS <UNNAMED1>::cross_wr_full  | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin <rst_l,wr_h,full_h>          |        4 |        1 | Covered  |
+#     | ignore bin unused_rst            |        5 |    -     | Occurred |
+#     | ignore bin unused_wr             |      100 |    -     | Occurred |
+#     | ignore bin unused_full           |      110 |    -     | Occurred |
+#     |----------------------------------|----------|----------|----------|
+#     | CROSS <UNNAMED1>::cross_rd_empty | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin <rst_l,rd_h,empty_h>         |        4 |        1 | Covered  |
+#     | ignore bin unused_rst            |        5 |    -     | Occurred |
+#     | ignore bin unused_rd             |      100 |    -     | Occurred |
+#     | ignore bin unused_empty          |       70 |    -     | Occurred |
+#     =====================================================================
+# 
+# 
+# +++++++++++++++++++++++++++++++++++++++++++++
+# ++++++++++       DESIGN UNITS      ++++++++++
+# +++++++++++++++++++++++++++++++++++++++++++++
+# 
+# 
+# CUMULATIVE SUMMARY
+# =============================================
+# |    Coverage Type    | Weight | Hits/Total |
+# =============================================
+# | Covergroup Coverage |      1 |   100.000% |
+# |---------------------|--------|------------|
+# | Types               |        |      1 / 1 |
+# =============================================
+# CUMULATIVE DESIGN-BASED COVERAGE: 100.000%
+# COVERED DESIGN UNITS: 1 / 1
+# FILES: 1
+# 
+# 
+# MODULE - work.tb
+# 
+# 
+#     SUMMARY
+#     =============================================
+#     |    Coverage Type    | Weight | Hits/Total |
+#     =============================================
+#     | Covergroup Coverage |      1 |   100.000% |
+#     |---------------------|--------|------------|
+#     | Types               |        |      1 / 1 |
+#     =============================================
+#     WEIGHTED AVERAGE: 100.000%
+# 
+# 
+#     COVERGROUP COVERAGE
+#     =====================================================================
+#     |            Covergroup            |   Hits   |  Goal /  |  Status  |
+#     |                                  |          | At Least |          |
+#     =====================================================================
+#     | TYPE /tb/c                       | 100.000% | 100.000% | Covered  |
+#     =====================================================================
+#     | INSTANCE <UNNAMED1>              | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | COVERPOINT <UNNAMED1>::empty     | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin empty_l                      |       70 |        1 | Covered  |
+#     | bin empty_h                      |       50 |        1 | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | COVERPOINT <UNNAMED1>::full      | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin full_l                       |      110 |        1 | Covered  |
+#     | bin full_h                       |       10 |        1 | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | COVERPOINT <UNNAMED1>::rst       | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin rst_l                        |      115 |        1 | Covered  |
+#     | bin rst_h                        |        5 |        1 | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | COVERPOINT <UNNAMED1>::wr        | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin wr_l                         |      100 |        1 | Covered  |
+#     | bin wr_h                         |       20 |        1 | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | COVERPOINT <UNNAMED1>::rd        | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin rd_l                         |      100 |        1 | Covered  |
+#     | bin rd_h                         |       20 |        1 | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | COVERPOINT <UNNAMED1>::din       | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin lower                        |       96 |        1 | Covered  |
+#     | bin mid                          |        8 |        1 | Covered  |
+#     | bin high                         |       16 |        1 | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | COVERPOINT <UNNAMED1>::dout      | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin lower                        |       14 |        1 | Covered  |
+#     | bin mid                          |        4 |        1 | Covered  |
+#     | bin high                         |       56 |        1 | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | CROSS <UNNAMED1>::cross_rst_wr   | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin <rst_l,wr_h>                 |       20 |        1 | Covered  |
+#     | ignore bin unused_rst            |        5 |    -     | Occurred |
+#     | ignore bin unused_wr             |      100 |    -     | Occurred |
+#     |----------------------------------|----------|----------|----------|
+#     | CROSS <UNNAMED1>::cross_rst_rd   | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin <rst_l,rd_h>                 |       20 |        1 | Covered  |
+#     | ignore bin unused_rst            |        5 |    -     | Occurred |
+#     | ignore bin unused_rd             |      100 |    -     | Occurred |
+#     |----------------------------------|----------|----------|----------|
+#     | CROSS <UNNAMED1>::cross_Wr_din   | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin <rst_l,wr_h,lower>           |        8 |        1 | Covered  |
+#     | bin <rst_l,wr_h,mid>             |        4 |        1 | Covered  |
+#     | bin <rst_l,wr_h,high>            |        8 |        1 | Covered  |
+#     | ignore bin unused_rst            |        5 |    -     | Occurred |
+#     | ignore bin unused_wr             |      100 |    -     | Occurred |
+#     |----------------------------------|----------|----------|----------|
+#     | CROSS <UNNAMED1>::cross_rd_dout  | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin <rst_l,rd_h,lower>           |        7 |        1 | Covered  |
+#     | bin <rst_l,rd_h,mid>             |        2 |        1 | Covered  |
+#     | bin <rst_l,rd_h,high>            |       10 |        1 | Covered  |
+#     | ignore bin unused_rd             |       55 |    -     | Occurred |
+#     |----------------------------------|----------|----------|----------|
+#     | CROSS <UNNAMED1>::cross_wr_full  | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin <rst_l,wr_h,full_h>          |        4 |        1 | Covered  |
+#     | ignore bin unused_rst            |        5 |    -     | Occurred |
+#     | ignore bin unused_wr             |      100 |    -     | Occurred |
+#     | ignore bin unused_full           |      110 |    -     | Occurred |
+#     |----------------------------------|----------|----------|----------|
+#     | CROSS <UNNAMED1>::cross_rd_empty | 100.000% | 100.000% | Covered  |
+#     |----------------------------------|----------|----------|----------|
+#     | bin <rst_l,rd_h,empty_h>         |        4 |        1 | Covered  |
+#     | ignore bin unused_rst            |        5 |    -     | Occurred |
+#     | ignore bin unused_rd             |      100 |    -     | Occurred |
+#     | ignore bin unused_empty          |       70 |    -     | Occurred |
+#     =====================================================================
+# 
+exit
+# VSIM: Simulation has finished.
+Done
